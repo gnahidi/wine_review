@@ -1,8 +1,8 @@
-<H1>Wines</H1>
-<p>Available as of <%= Time.now %></p>
+<h1>Wines</h1>
 <ol>
-	<% @wines.each do |wine| %>
-	<li><%= @wine %>
-	</li>
-	<% end %>
+  <% @wines.each do |wine| %>
+  <li><%= wine.name %> by <%= wine.winery %><br />
+
+  </li>
+<% end %>
 </ol>
