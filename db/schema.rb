@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905014329) do
+ActiveRecord::Schema.define(version: 20141014184938) do
+
+  create_table "logs", force: true do |t|
+    t.string   "name"
+    t.integer  "rating"
+    t.string   "location"
+    t.string   "comments"
+    t.datetime "tasted_on"
+    t.integer  "wine_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "wines", force: true do |t|
     t.string   "name"
@@ -22,5 +33,8 @@ ActiveRecord::Schema.define(version: 20140905014329) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "logs", ["wine_id"], name: "index_logs_on_wine_id"
+
 
 end

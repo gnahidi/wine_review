@@ -1,0 +1,18 @@
+<header>LogEntry for <%= link_to(@wine.name, @wine) %></header>
+	<ol id="logs">
+		<% @logs.each do |log| %>
+			<li>
+				<span class="log"><%= pluralize(log.rating, 'rating') %></span>
+				<span class="date"><%= time_ago_in_words(log.created_at) %> ago </span>
+				<p>
+					&quot;<%= log.comments %>&quot;
+				</p>
+			</li>
+		<% end %>
+	</ol>
+	<%= link_to 'Write a LogEntry', new_wine_log_path(@wine), remote: true,
+	data: { 'update-target' => 'log_form_container'},
+	class: 'btn btn-primary' %>
+	<div id="log_form_container"></div>
+
+	

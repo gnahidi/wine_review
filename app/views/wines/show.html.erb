@@ -14,3 +14,7 @@
 
 <%= button_to 'Delete ', @wine, method: :delete, data: { confirm: 'Are you sure?'} %>
 
+<p>
+	Read all
+	<%= link_to pluralize(@wine.logs.size, 'log'), wine_logs_path(@wine) %>
+</p>

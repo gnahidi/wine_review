@@ -1,5 +1,8 @@
 WineReview::Application.routes.draw do
 
+
+  resources :logs
+
 #resources :reviews
 #Start Homework 2
 #  get "wines/index"
@@ -16,7 +19,7 @@ WineReview::Application.routes.draw do
 
 #Start Homework 3
 resources :wines do
-#    resources :reviews
+    resources :logs
     get 'page/:page', :action => :index, :on => :collection
 end
 root 'wines#index'
