@@ -24,7 +24,7 @@ class LogsController < ApplicationController
 	end
 
 	def log_params
-		params.require(:log).permit(:ratings, :name, :comments)
+		params.require(:log).permit(:rating, :name, :comments, :location, :tasted_on)
 	end
 
 end
