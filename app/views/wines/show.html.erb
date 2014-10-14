@@ -1,2 +1,14 @@
-<h1>Wines#show</h1>
-<p>Find me in app/views/wines/show.html.erb</p>
+<h1><% content_for :name, @wine.name %></h1>
+<article class="wine">
+  <p><label>Wine Name:</label> <%= @wine.name %></p>
+  <p><label>Winery:</label> <%= @wine.winery %></p>
+  <p><label>Year:</label> <%= @wine.year %></p>
+  <p><label>Country:</label> <%= @wine.country %></p>
+  <p><label>Varietal:</label> <%= @wine.varietal %></p>
+</article>
+
+<%= link_to 'All Wines', wines_path %>
+| <%= link_to 'Edit', edit_wine_path(@wine) %>
+
+<%= button_to 'Delete ', @wine, method: :delete, data: { confirm: 'Are you sure?'} %>
+
