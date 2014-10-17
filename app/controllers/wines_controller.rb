@@ -58,7 +58,7 @@ end
 
 
 def wine_params
-	params.require(:wine).permit(:name, :winery, :country, :year)
+	params.require(:wine).permit(:name, :winery, :country, :year, :varietal)
 end
 
 end

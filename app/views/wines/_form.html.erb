@@ -4,9 +4,10 @@
 <%= f.label :year %> <%= f.text_field :year %> <br />
 <%= f.label :country %> <%= f.text_field :country %> <br />
 <%= f.label :winery %> <%= f.text_field :winery %> <br />
-<%= f.label :Varietal %> <%= f.text_field :varietal %> <br />
+<%= f.label :Varietal %> 
+<%= f.select :varietal, Wine::VARIETAL, { prompt: "Select One ... " } %> <br />
 <p>
 	<%= f.submit %>
-	<%= button_to 'Cancel', wines_path %>
+	<%= link_to 'Cancel', wines_path %>
 </P>
 <% end %>
